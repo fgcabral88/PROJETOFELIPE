@@ -1,0 +1,79 @@
+﻿@model Felipe.Models.Supplier
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create to new Suppliers";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Registro de um new Suppliers
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true,"", new {@class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model1 => model1.Nome, htmlAttributes: new { @class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.EditorFor(model1 => model1.Nome, new { HtmlAtributes = new {@class = "form-control"} })
+                        @Html.ValidationMessageFor(model1 => model1.Nome,"", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer panel-info">
+            <div class="col-md-offset-2 col-md-10">
+                <imput type="submit"
+                       values="Adicionar Suppliers"
+                       class="btn btn-danger" />
+                @Html.ActionLink("Retornar para a listagem de Suppliers", "Index", null, new { @class = "btn btn=warning" })
+            </div>
+            <br />
+            <br />
+        </div>
+        </div>
+}
+    @section ScriptPage {
+        <script src="~/Scripts/jquery.validate.min.js">
+        </script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js">
+        </script>
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
